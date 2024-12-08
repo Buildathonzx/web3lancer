@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'; // Correct import
 
 interface Message {
   sender: {
@@ -34,7 +34,7 @@ const MessageSection: React.FC = () => {
               alt={`${message.sender.name} profile`}
               className="rounded-full w-8 h-8 object-cover mr-3"
             />
-            <Link to="/messages" className="flex-grow"> 
+            <Link href="/messages" className="flex-grow"> 
               <div>
                 <span className="font-medium text-gray-800">{message.sender.name}</span>
                 <span className="text-sm text-gray-600 ml-2">{message.preview}</span>
@@ -44,7 +44,7 @@ const MessageSection: React.FC = () => {
           </li>
         ))}
       </ul>
-      <Link to="/messages" className="mt-4 text-blue-500 hover:underline block text-center"> 
+      <Link href="/messages" className="mt-4 text-blue-500 hover:underline block text-center"> 
         View All Messages
       </Link>
     </div>
