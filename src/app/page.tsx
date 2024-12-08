@@ -174,6 +174,9 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> {/* Adjust grid as needed */}
                             <PaymentCard />
                         </div>
+                        <h2 className="text-xl font-semibold mb-4">OR</h2>
+
+                        <h4 className="text-xl font-semibold mb-4">use request network</h4>
                         <div className="mt-4">
                             <ConnectWalletButton /> {/* Reconnect Wallet Button */}
                         </div>
