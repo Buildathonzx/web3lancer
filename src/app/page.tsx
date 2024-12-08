@@ -58,7 +58,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto p-6 grid grid-cols-12 gap-6">
-        <Sidebar isWalletConnected={isWalletConnected} />
+        {/* <Sidebar isWalletConnected={isWalletConnected} /> */}
 
         <div className="col-span-9 bg-white rounded-lg shadow-md p-6">
           {isWalletConnected ? (
