@@ -21,6 +21,7 @@ const web3SignatureProvider = new Web3SignatureProvider(provider);
 
 
 
+
 export default function Home() {
     // ... (existing state and functions)
     const isWalletConnected = true; // or false, depending on desired default behavior
@@ -46,7 +47,7 @@ export default function Home() {
             name: 'Alice',
             title: 'Blockchain Specialist',
             imageUrl: '/images/prof1.jpg',
-            bio: '5+ years of blockchain development experience.',
+            bio: '5+ years of blockchain development experience with the request network',
         },
         {
             id: '2',
