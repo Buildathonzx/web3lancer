@@ -12,6 +12,7 @@ import PaymentCard from '@/components/PaymentCard'; // Import PaymentCard
 
 
 import { Web3SignatureProvider } from "@requestnetwork/web3-signature";
+const provider = window.ethereum;
 
 const web3SignatureProvider = new Web3SignatureProvider(provider);
 
