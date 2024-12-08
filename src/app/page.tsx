@@ -9,6 +9,18 @@ import FreelanceCard from '@/components/FreelanceCard'; // Import FreelanceCard
 import { JobCard } from '@/components/JobCard';
 import PaymentCard from '@/components/PaymentCard'; // Import PaymentCard
 
+
+
+import { Web3SignatureProvider } from "@requestnetwork/web3-signature";
+
+const web3SignatureProvider = new Web3SignatureProvider(provider);
+
+
+
+
+
+
+
 export default function Home() {
     // ... (existing state and functions)
     const isWalletConnected = true; // or false, depending on desired default behavior
