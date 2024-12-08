@@ -6,43 +6,50 @@ interface SearchResult {
   // Add other relevant properties as needed
 }
 
-const UniversalSearchBar: React.FC = () => {
+interface UniversalSearchBarProps {
+  placeholder?: string;
+  data: SearchResult[]; // Pass data as a prop
+  onSearch?: (searchTerm: string) => void; // Callback for search events
+}
+
+const UniversalSearchBar: React.FC<UniversalSearchBarProps> = ({ placeholder = "Search...", data, onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
 
     if (debounceRef.current) {
       clearTimeout(debounceRef.current);
     }
 
     debounceRef.current = setTimeout(() => {
-      // Replace with your actual search logic
-      const filteredResults = sampleData.filter((item) =>
-        item.title.toLowerCase().includes(event.target.value.toLowerCase())
+      const filteredResults = data.filter((item) =>
+        item.title.toLowerCase().includes(newSearchTerm.toLowerCase())
       );
       setSearchResults(filteredResults);
-      setIsDropdownOpen(filteredResults.length > 0); // Only open if results
+      setIsDropdownOpen(filteredResults.length > 0);
+
+      // Call the onSearch callback if provided
+      if (onSearch) {
+        onSearch(newSearchTerm);
+      }
     }, 300);
   };
 
   useEffect(() => {
     if (searchTerm === '') {
-      setSearchResults([]); // Clear results when search is empty
+      setSearchResults([]);
       setIsDropdownOpen(false);
+      if (onSearch) {
+        onSearch(''); // Notify parent of cleared search
+      }
     }
-  }, [searchTerm]);
+  }, [searchTerm, onSearch]);
 
-  // Sample data (replace with your actual data source)
-  const sampleData: SearchResult[] = [
-    { id: '1', title: 'Web3 Developer' },
-    { id: '2', title: 'Smart Contract Engineer' },
-    { id: '3', title: 'UI/UX Designer' },
-    // ... add more sample data
-  ];
 
   return (
     <div className="relative">
@@ -61,7 +68,7 @@ const UniversalSearchBar: React.FC = () => {
         </svg>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder={placeholder}
           className="ml-2 flex-grow outline-none"
           value={searchTerm}
           onChange={handleSearchChange}
