@@ -5,9 +5,9 @@ import ConnectWalletButton from '@/components/ConnectWalletButton';
 import ProfileSection from '@/components/ProfileSection';
 import UniversalSearchBar from '@/components/UniversalSearchBar';
 import Sidebar from '@/components/Sidebar';
-// import { JobCard } from '@/components/Cards'; // Import JobCard
 import FreelanceCard from '@/components/FreelanceCard'; // Import FreelanceCard
-import { JobCard }  from '@/components/JobCard';
+import { JobCard } from '@/components/JobCard';
+import PaymentCard from '@/components/PaymentCard'; // Import PaymentCard
 
 export default function Home() {
     // ... (existing state and functions)
@@ -54,21 +54,7 @@ export default function Home() {
                 {/* <Sidebar isWalletConnected={isWalletConnected} /> */}
 
                 <div className="col-span-9">
-
-                    {isWalletConnected ? (
-                        <>
-                            {/* ... (dashboard content remains the same) */}
-                        </>
-                    ) : (
-                        <div className="flex flex-col items-center justify-center h-full">
-                            {/* ... (welcome message) */}
-                        </div>
-                    )
-                    
-                    
-                    
-                    }
-
+                    {/* ... (dashboard content / welcome message based on isWalletConnected) ... */}
 
                     {/* Featured Jobs Section */}
                     <section className="mt-8">
@@ -88,6 +74,17 @@ export default function Home() {
                             {sampleFreelancers.map((freelancer) => (
                                 <FreelanceCard key={freelancer.id} freelancer={freelancer} />
                             ))}
+                        </div>
+                    </section>
+
+                    {/* Payment Information Section */}
+                    <section className="mt-8">
+                        <h2 className="text-xl font-semibold mb-4">Freelancer Card Information</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> {/* Adjust grid as needed */}
+                            <PaymentCard />
+                        </div>
+                        <div className="mt-4">
+                            <ConnectWalletButton /> {/* Reconnect Wallet Button */}
                         </div>
                     </section>
                 </div>
