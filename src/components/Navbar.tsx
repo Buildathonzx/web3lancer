@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <a href="#" className="flex items-center">
           <img
-            src="https://flowbite.com/assets/images/logo.svg"
+            src="/images/web3lancer0.jpg"
             className="mr-3 h-6 sm:h-9"
             alt="Flowbite Logo"
           />
