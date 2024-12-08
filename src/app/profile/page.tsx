@@ -6,10 +6,10 @@ export default function ProfilePage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="flex-1">
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
         {/* Profile Section */}
         <ProfileSection /> 
       </div>

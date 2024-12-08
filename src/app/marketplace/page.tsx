@@ -9,12 +9,12 @@ export default function MarketplacePage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Content */}
       <div className="flex-1">
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Marketplace Content */}
         <div className="p-6">

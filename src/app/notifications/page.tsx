@@ -6,9 +6,9 @@ export default function NotificationsPage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="flex-1">
-        <Navbar />
+        {/* <Navbar /> */}
         <Notifications /> 
       </div>
     </div>

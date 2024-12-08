@@ -5,12 +5,12 @@ export default function ReelsPage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Content */}
       <div className="flex-1">
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Reels Feed */}
         <div className="p-4">

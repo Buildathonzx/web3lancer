@@ -5,12 +5,12 @@ export default function PaymentPage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Content */}
       <div className="flex-1">
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Payment Content */}
         <div className="p-8">

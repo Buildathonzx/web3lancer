@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
       <nav>
         <ul>
           <li className="mb-4">
-            <Link href="/dashboard" className="hover:text-gray-300">
+            <Link href="/" className="hover:text-gray-300">
               Dashboard
             </Link>
           </li>

@@ -14,12 +14,12 @@ export default function BuyersPage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main content */}
       <div className="flex-1">
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Content area */}
         <div className="p-6">

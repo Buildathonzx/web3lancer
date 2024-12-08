@@ -7,17 +7,17 @@ export default function SellersPage() {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Content */}
       <div className="flex-1 bg-gray-100 p-6">
         {/* Navbar */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Content */}
         <div className="mt-6">
           {/* Search Bar */}
-          <UniversalSearchBar placeholder="Search for sellers..." />
+          <UniversalSearchBar placeholder="Search for sellers..." data={[]} />
 
           {/* Seller List or Information */}
           <div className="mt-4">
