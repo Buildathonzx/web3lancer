@@ -5,12 +5,13 @@ import ConnectWalletButton from '@/components/ConnectWalletButton';
 import ProfileSection from '@/components/ProfileSection';
 import UniversalSearchBar from '@/components/UniversalSearchBar';
 import Sidebar from '@/components/Sidebar';
-import { JobCard } from '@/components/Cards'; // Import JobCard
+// import { JobCard } from '@/components/Cards'; // Import JobCard
 import FreelanceCard from '@/components/FreelanceCard'; // Import FreelanceCard
-
+import { JobCard }  from '@/components/JobCard';
 
 export default function Home() {
     // ... (existing state and functions)
+    const isWalletConnected = true; // or false, depending on desired default behavior
 
     const sampleJobs = [
         {
@@ -23,7 +24,7 @@ export default function Home() {
             id: '2',
             title: 'Frontend Web3 Developer',
             description: 'Build engaging user interfaces for blockchain apps.',
-            imageUrl: '/images/job2.jpg',
+            imageUrl: '/images/web3lancer.jpg',
         },
     ];
 
@@ -32,14 +33,14 @@ export default function Home() {
             id: '1',
             name: 'Alice',
             title: 'Blockchain Specialist',
-            imageUrl: '/images/freelancer1.jpg',
+            imageUrl: '/images/prof1.jpg',
             bio: '5+ years of blockchain development experience.',
         },
         {
             id: '2',
             name: 'Bob',
             title: 'Smart Contract Auditor',
-            imageUrl: '/images/freelancer2.jpg',
+            imageUrl: '/images/prof2.jpg',
             bio: 'Expert in security audits for smart contracts',
         },
     ];
@@ -62,7 +63,11 @@ export default function Home() {
                         <div className="flex flex-col items-center justify-center h-full">
                             {/* ... (welcome message) */}
                         </div>
-                    )}
+                    )
+                    
+                    
+                    
+                    }
 
 
                     {/* Featured Jobs Section */}
