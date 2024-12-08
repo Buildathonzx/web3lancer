@@ -1,0 +1,1 @@
+print(default_api.natural_language_write_file(language = "tsx", path = "src/components/Navbar.tsx", prompt = "Create a Navbar component for the web3lancer platform. It should include a logo, a universal search bar, a connect wallet button, and a user profile section. Style the navbar using the global styles or a separate stylesheet. Make sure it is responsive."))

@@ -2,20 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #212529;
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300;
+}
+.btn-secondary {
+  @apply bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-gray-500;
+}
+
+/* Cards */
+.card {
+  @apply bg-white shadow-md rounded-md p-4;
+}
+
+/* Forms */
+.form-control {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+/* Navigation */
+.navbar {
+  @apply bg-white shadow-md py-3 px-6;
+}
+.navbar-brand {
+  @apply font-bold text-xl text-blue-500;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply bg-gray-100 w-64 py-6 px-4 fixed h-screen overflow-y-auto;
+}
+.sidebar-link {
+  @apply block py-2 px-3 text-gray-700 hover:bg-gray-200 rounded-md transition-colors;
+}
+
+/* Universal Search Bar */
+.search-bar {
+  @apply relative;
+}
+.search-input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+.search-icon {
+  @apply absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500;
+}
+
+/* Notifications */
+.notification {
+  @apply bg-white shadow-md rounded-md p-3 mb-2;
+}
+
+/* Recent Gigs */
+.recent-gig {
+  @apply bg-white shadow-md rounded-md p-4 mb-2;
+}
+
+/* Message Section */
+.message-section {
+  @apply bg-white shadow-md rounded-md p-4;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f8f9fa;
+  }
+  .card, .notification, .recent-gig, .message-section, .navbar {
+    @apply bg-gray-800;
+  }
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 focus:ring-blue-500;
+  }
+  .btn-secondary {
+    @apply bg-gray-700 text-gray-300 hover:bg-gray-600 focus:ring-gray-400;
+  }
+  .sidebar {
+    @apply bg-gray-900;
+  }
 }
